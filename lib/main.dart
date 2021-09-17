@@ -54,9 +54,16 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  Future<void> _incrementCounter() async {
+  Future<void> openIonic1() async {
       try {
         await MethodChannel('com.example.ecs_flutter_test/test').invokeMethod('openIonic1');
+      } on PlatformException catch (e) {
+      }
+  }
+
+  Future<void> openIonic2() async {
+      try {
+        await MethodChannel('com.example.ecs_flutter_test/test').invokeMethod('openIonic2');
       } on PlatformException catch (e) {
       }
   }
@@ -95,21 +102,17 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            ElevatedButton(
+              child: Text('Abrir activity Ionic 1'),
+              onPressed: openIonic1,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            ElevatedButton(
+              child: Text('Abrir activity Ionic 2'),
+              onPressed: openIonic2,
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      )
     );
   }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugins.GeneratedPluginRegistrant
+import io.ionic.photogallery.MainActivityCamera
 import io.ionic.starter.MainActivity
 
 
@@ -19,6 +20,9 @@ class MainActivity : FlutterActivity() {
                     when (call.method) {
                         "openIonic1" -> {
                             startActivity(Intent(context, MainActivity::class.java))
+                        }
+                        "openIonic2" -> {
+                            startActivity(Intent(context, MainActivityCamera::class.java))
                         }
                     }
                 }
