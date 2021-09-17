@@ -70,4 +70,4 @@ npm-debug.log*
 
 # Obfuscation related
 **/app.*.map.json
-
+**/.gradle
