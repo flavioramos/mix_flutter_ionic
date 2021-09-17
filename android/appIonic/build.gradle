@@ -17,7 +17,7 @@
        under the License.
 */
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 if (cdvHelpers.getConfigPreference('GradlePluginKotlinEnabled', 'false').toBoolean()) {
     apply plugin: 'kotlin-android'
@@ -228,7 +228,6 @@ task cdvPrintProps {
 android {
     defaultConfig {
         versionCode cdvVersionCode ?: new BigInteger("" + privateHelpers.extractIntFromManifest("versionCode"))
-        applicationId privateHelpers.extractStringFromManifest("package")
 
         if (cdvMinSdkVersion != null) {
             minSdkVersion cdvMinSdkVersion
