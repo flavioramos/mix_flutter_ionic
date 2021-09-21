@@ -104,7 +104,7 @@ public class CordovaActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // need to activate preferences before super.onCreate to avoid "requestFeature() must be called before adding content" exception
-        loadConfig();
+        loadConfig(getIntent().getStringExtra("name"));
 
         String logLevel = preferences.getString("loglevel", "ERROR");
         LOG.setLogLevel(logLevel);
@@ -161,9 +161,9 @@ public class CordovaActivity extends Activity {
     }
 
     @SuppressWarnings("deprecation")
-    protected void loadConfig() {
+    protected void loadConfig(String name) {
         ConfigXmlParser parser = new ConfigXmlParser();
-        parser.parse(this);
+        parser.parse(this, name);
         preferences = parser.getPreferences();
         preferences.setPreferencesBundle(getIntent().getExtras());
         launchUrl = parser.getLaunchUrl();

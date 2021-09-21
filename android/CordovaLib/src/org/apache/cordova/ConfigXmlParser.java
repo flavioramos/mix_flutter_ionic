@@ -49,14 +49,14 @@ public class ConfigXmlParser {
         return launchUrl;
     }
 
-    public void parse(Context action) {
+    public void parse(Context action, String name) {
         // First checking the class namespace for config.xml
-        int id = action.getResources().getIdentifier("config", "xml", action.getClass().getPackage().getName());
+        int id = action.getResources().getIdentifier(name, "xml", action.getClass().getPackage().getName());
         if (id == 0) {
             // If we couldn't find config.xml there, we'll look in the namespace from AndroidManifest.xml
-            id = action.getResources().getIdentifier("config", "xml", action.getPackageName());
+            id = action.getResources().getIdentifier(name, "xml", action.getPackageName());
             if (id == 0) {
-                LOG.e(TAG, "res/xml/config.xml is missing!");
+                LOG.e(TAG, "res/xml/%s.xml is missing!", name);
                 return;
             }
         }

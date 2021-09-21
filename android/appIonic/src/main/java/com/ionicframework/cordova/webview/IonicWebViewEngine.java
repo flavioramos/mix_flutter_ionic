@@ -60,7 +60,7 @@ public class IonicWebViewEngine extends SystemWebViewEngine {
                    CordovaResourceApi resourceApi, PluginManager pluginManager,
                    NativeToJsMessageQueue nativeToJsMessageQueue) {
     ConfigXmlParser parser = new ConfigXmlParser();
-    parser.parse(cordova.getActivity());
+    parser.parse(cordova.getActivity(),"config_ionic");
 
     String hostname = preferences.getString("Hostname", "localhost");
     scheme = preferences.getString("Scheme", "http");
