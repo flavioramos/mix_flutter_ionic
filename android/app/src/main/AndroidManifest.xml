@@ -41,27 +41,30 @@
             android:name="io.ionic.starter.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
             android:label="@string/activity_name"
+            android:usesCleartextTraffic="true"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
             android:windowSoftInputMode="adjustResize" />
 
-        <activity
-            android:name="io.ionic.photogallery.MainActivityCamera"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-            android:label="@string/activity_name"
-            android:launchMode="singleTop"
-            android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+<!--        <activity-->
+<!--            android:name="io.ionic.photogallery.MainActivityCamera"-->
+<!--            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"-->
+<!--            android:label="@string/activity_name"-->
+<!--            android:launchMode="singleTop"-->
+<!--            android:theme="@android:style/Theme.DeviceDefault.NoActionBar"-->
+<!--            android:usesCleartextTraffic="true"-->
+<!--            android:windowSoftInputMode="adjustResize">-->
+<!--        </activity>-->
 
-        <provider
-            android:name="org.apache.cordova.camera.FileProvider"
-            android:authorities="${applicationId}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/camera_provider_paths" />
-        </provider>
+<!--        <provider-->
+<!--            android:name="org.apache.cordova.camera.FileProvider"-->
+<!--            android:authorities="${applicationId}.provider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/camera_provider_paths" />-->
+<!--        </provider>-->
 
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
