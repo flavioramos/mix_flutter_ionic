@@ -62,5 +62,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation(project(path: ":CordovaLib"))
     implementation(project(path: ":appIonic"))
-//    implementation(project(path: ":appIonicCamera"))
+    implementation(project(path: ":appIonicCamera"))
 }

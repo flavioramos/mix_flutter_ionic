@@ -5,7 +5,7 @@ import android.os.Bundle
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugins.GeneratedPluginRegistrant
-//import io.ionic.photogallery.MainActivityCamera
+import io.ionic.photogallery.MainActivityCamera
 import io.ionic.starter.MainActivity
 
 
@@ -24,9 +24,9 @@ class MainActivity : FlutterActivity() {
                             startActivity(intent)
                         }
                         "openIonic2" -> {
-//                            val intent = Intent(context, MainActivityCamera::class.java)
-//                            intent.putExtra("name","config_ionic_camera")
-//                            startActivity(intent)
+                            val intent = Intent(context, MainActivityCamera::class.java)
+                            intent.putExtra("name","config_ionic_camera")
+                            startActivity(intent)
                         }
                     }
                 }
